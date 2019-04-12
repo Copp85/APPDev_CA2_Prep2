@@ -42,5 +42,11 @@ namespace CA2_prep2.Models
         [Required]
         [Range (1, 10)]
         public int Number { get; set; }
+
+        [Required]
+        [Range(typeof(DateTime), "14/04/2019", "14/04/2020", ErrorMessage ="Date is out of range")]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        public DateTime Start { get; set; }
     }
 }
