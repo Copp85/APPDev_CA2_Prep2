@@ -1,0 +1,67 @@
+﻿@page
+@model CA2_prep2.Pages.AppEntryModel
+@{
+    ViewData["Title"] = "AppEntry";
+}
+
+<h2>Please fill in your app details</h2>
+
+<form method="post" class="form-horizontal">
+    <div class="form-group">
+        <label asp-for=browncoat.FirstName class="col-sm-2"></label>
+        <input asp-for=browncoat.FirstName class="col-sm-2">
+        <Span asp-validation-for="browncoat.FirstName"></Span>
+
+    </div>
+
+    @*Field for child's surname*@
+    <div class="form-group">
+        <label asp-for=browncoat.Surname class="col-sm-2"></label>
+        <input asp-for=browncoat.Surname class="col-sm-2">
+        <Span asp-validation-for="browncoat.Surname"></Span>
+    </div>
+
+    @*Field for child's PPSN*@
+    <div class="form-group">
+        <label asp-for=browncoat.PPSN class="col-sm-2"></label>
+        <input asp-for=browncoat.PPSN class="col-sm-2">
+
+        <Span asp-validation-for="browncoat.PPSN"></Span>
+    </div>
+
+    @*Field for child's date of birth*@
+    <div class="form-group">
+        <label asp-for=browncoat.DOB class="col-sm-2"></label>
+        <input asp-for=browncoat.DOB class="col-sm-2">
+
+        <Span asp-validation-for="browncoat.DOB"></Span>
+    </div>
+
+    @*Field for Guardian's relationship to child*@
+    <fieldset class="form-group">
+        <legend>Gender</legend>
+        <div>
+            <input type="radio" id="Male" asp-for="browncoat.Gender" value="Male">
+            <label for="Male">
+                Male
+            </label>
+        </div>
+        <div>
+            <input type="radio" id="Female" asp-for="browncoat.Gender" value="Female">
+            <label for="Female">
+                Female
+            </label>
+        </div>
+    </fieldset>
+
+    @*Field for Range*@
+    <div class="form-group">
+        <label asp-for=browncoat.Number class="col-sm-2"></label>
+        <input asp-for=browncoat.Number class="col-sm-2">
+
+        <Span asp-validation-for="browncoat.Number"></Span>
+    </div>
+
+    <asp-page ="Confirmation" asp-route-id="browncoat.ID"><input type="submit" name="Submit" value="Submit" />
+</form>
+
